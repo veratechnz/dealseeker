@@ -5,7 +5,7 @@
 *	$whitePlain				#ffffff	rgb(255,255,255)
 */
 
-html, body {
+html, body, .container, main {
 	height: 100%;
 }
 .container {

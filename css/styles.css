@@ -78,12 +78,14 @@ img {
 	padding: 0px;
 	}
 	.menu-btn {
+	margin-top: 11%;
 	font-size: 18px;
 	padding-right: 10px;
+	font-weight: bold;
 	}
 
 	.header, .footer {
-	padding: 4%;
+	padding: 4% 4% 1% 4%;
 	height: 52px;
 	}
 

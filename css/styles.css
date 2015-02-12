@@ -64,7 +64,8 @@ img {
 	position: absolute;
 	z-index: 5; 
 	width: 72px; 
-	left: 6px;
+	float: left;
+	left: 17%;
 }
 
 
@@ -78,14 +79,14 @@ img {
 	padding: 0px;
 	}
 	.menu-btn {
-	margin-top: 11%;
-	font-size: 18px;
+	margin-top: 4%;
+	font-size: 22px;
 	padding-right: 10px;
 	font-weight: bold;
 	}
 
 	.header, .footer {
-	padding: 4% 4% 1% 4%;
+	padding: 4% 4% 1% 1%;
 	height: 52px;
 	}
 

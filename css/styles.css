@@ -55,4 +55,59 @@ html, body, .container, main {
 
 img {
 	width:100%;
+<<<<<<< HEAD
 }
+=======
+}
+
+
+/* ++++++++++++++ LOGO ++++++++++++++ */
+#seekLogo {
+	position: absolute;
+	z-index: 5; 
+	width: 72px; 
+	left: 6px;
+}
+
+
+
+/************************  All Media Queries  ****************************/
+
+/*Mobile*/
+@media(max-width:767px){
+
+	.text-right, .text-left, .options-button{
+	padding: 0px;
+	}
+	.menu-btn {
+	margin-top: 11%;
+	font-size: 18px;
+	padding-right: 10px;
+	font-weight: bold;
+	}
+
+	.header, .footer {
+	padding: 4% 4% 1% 4%;
+	height: 52px;
+	}
+
+
+}
+
+/*Tablet*/
+@media(min-width:768px){
+
+}
+
+/*Laptop*/
+@media(min-width:992px){
+
+}
+
+/*Desktop*/
+@media(min-width:1200px){
+
+}
+
+
+>>>>>>> jared01

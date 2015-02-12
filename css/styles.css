@@ -58,8 +58,14 @@ img {
 	width:100%;
 }
 
+
 /* ++++++++++++++ LOGO ++++++++++++++ */
-#seekLogo{position: absolute; z-index: 5; width: 72px; left: 10px;}
+#seekLogo {
+	position: absolute;
+	z-index: 5; 
+	width: 72px; 
+	left: 6px;
+}
 
 
 

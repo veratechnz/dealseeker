@@ -25,7 +25,7 @@ html, body, .container, main {
 }
 
 .days-btn, .options-btn {
-	color:#5C9EFF;
+	color:#F4F0E9;
 }
 
 /* ++++++++++++++ MENU ++++++++++++++ */
@@ -84,17 +84,6 @@ img {
 }
 
 
-/* ++++++++++++++ LOGO ++++++++++++++ */
-#seekLogo {
-	position: absolute;
-	z-index: 5; 
-	width: 72px; 
-	float: left;
-	left: 17%;
-}
-
-
-
 /************************  All Media Queries  ****************************/
 
 /*Mobile*/
@@ -134,4 +123,3 @@ img {
 }
 
 
->>>>>>> jared01

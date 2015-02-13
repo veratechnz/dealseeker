@@ -1,16 +1,9 @@
 {
-  "type": "FeatureCollection",
-  "icon": "./media/images/markers/bar-marker.png",
-  "features": [
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-36.84911363,174.76436589]
-      },
-      "properties": {
-        "name": "Dominos Pizza"
-      }
-    }
-  ]
+	"name": "Dominos Pizza",
+  	"icon": "./media/images/markers/bar-marker.png",
+  	"geometry": {
+  		"type": "Point",
+      "lat": "-36.84911363",
+      "lng": "174.76436589"
+  	}
 }

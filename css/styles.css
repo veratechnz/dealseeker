@@ -28,20 +28,46 @@ html, body {
 	color:#5C9EFF;
 }
 
+/* ++++++++++++++ MENU ++++++++++++++ */
+
+.days-menu-items li:hover {
+	background: #5397e5;
+}
+
+.options-menu-items li:hover {
+	background: #5397e5;
+}
+
+
 /* ++++++++++++++ MAP ++++++++++++++ 
 
 	See map.css
 
  ++++++++++++++ FOOTER ++++++++++++++ */
 
-.footer .img-cont {
+
+.footer {
+position: absolute;
+bottom: 0;
+height: 60px;
+
+
+}
+
+ .img-cont {
 	margin:0 auto;
+	width: 80%;
 	max-width: 300px;
+
+	
 }
 
 .help-btn {
 	color: #ffffff;
+	padding-right: 10px;
 }
+
+
 
 /* ++++++++++++++ GENERAL CLASSES ++++++++++++++ */
 

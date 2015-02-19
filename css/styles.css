@@ -1,4 +1,5 @@
 @import url(map.css);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600);
 
 /*
 *	$header-black			#353535	rgb(53, 53, 53)
@@ -20,13 +21,77 @@ html, body, .container, main {
 /* ++++++++++++++ HEADER ++++++++++++++ */
 
 .logo > .img-cont {
-	margin:0 auto;
+	position: absolute;
 	max-width: 65px;
+	z-index: 10;
 }
 
 .days-btn, .options-btn {
-	color:#5C9EFF;
+	color:#F4F0E9;
 }
+
+
+
+/* ++++++++++++++ MENU ++++++++++++++ */
+
+.days-menu-items li:hover {
+	background: #5484F8;
+	border-top: none;
+	opacity: 1;
+	color: #fff;
+}
+
+.options-menu-items li:hover {
+	background: #5484F8;
+	border-top: none;
+	opacity: 1;
+	color: #fff;
+}
+
+.days-menu-items, .options-menu-items {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 18px;
+	background: #5c9eff;
+	display: none;
+	position: absolute;
+	z-index: 2;
+	opacity: 0.8;
+	width: 45%;
+	font-weight: 300;
+}
+
+.days-menu-items {
+	left: 0;
+}
+
+.options-menu-items {
+	right: 0;
+}
+
+.days-menu-items ul, .options-menu-items ul {
+	list-style: none;
+	padding:0;
+}
+
+.days-menu-items li, .options-menu-items li {
+	text-transform: capitalize;
+}
+
+.days-menu-items a, .options-menu-items a {
+	color: #ffffff;
+	text-decoration: none;
+	padding: 5px;
+	display: block;
+}
+
+.days-menu-items a, .options-menu-items a {
+	border-top: 1px solid #5082F2;
+}
+
+.inner-menu {
+	margin-bottom: 0px;
+}
+
 
 /* ++++++++++++++ MAP ++++++++++++++ 
 
@@ -34,14 +99,24 @@ html, body, .container, main {
 
  ++++++++++++++ FOOTER ++++++++++++++ */
 
-.footer .img-cont {
-	margin:0 auto;
-	max-width: 300px;
+.navbar-fixed-bottom {
+	background-color: #2d2d2d;
+	height: 50px;
+	bottom: 0;
+}
+
+ .img-cont {
+ 	margin: 0 auto;
+	vertical-align: center;
 }
 
 .help-btn {
 	color: #ffffff;
+	padding: 10px;
+
 }
+
+
 
 /* ++++++++++++++ GENERAL CLASSES ++++++++++++++ */
 
@@ -55,4 +130,46 @@ html, body, .container, main {
 
 img {
 	width:100%;
+
 }
+
+
+/************************  All Media Queries  ****************************/
+
+/*Mobile*/
+@media(max-width:767px){
+
+	.text-right, .text-left, .options-button{
+	padding: 0px;
+	}
+	.menu-btn {
+	margin-top: 4%;
+	font-size: 22px;
+	padding-right: 10px;
+	font-weight: bold;
+	}
+
+	.header, .footer {
+	padding: 4% 4% 1% 1%;
+	height: 52px;
+	}
+
+
+}
+
+/*Tablet*/
+@media(min-width:768px){
+
+}
+
+/*Laptop*/
+@media(min-width:992px){
+
+}
+
+/*Desktop*/
+@media(min-width:1200px){
+
+}
+
+

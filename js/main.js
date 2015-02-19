@@ -4,65 +4,28 @@ init();
 
 function init() {
 
+	setUpSlideMenus();
 	loadMap();
 	loadMarkers();
+	createModals();
 	makeMapResponsive();
-
-	/* ++++++++++++++ LISTENERS ++++++++++++++ */
-
-	// Slide Menus set up
-	$(menuSlide('.days-btn', '.days-menu-items',300));
-	$(menuSlide('.options-btn', '.options-menu-items',300));
-
-
-
-	// Adds a marker to the map
-	var marker = new google.maps.Marker({
-		icon: './media/images/markers/event-marker.png',
-		position: {lat:-36.8495452,lng:174.7669572},
-		map: map
-	});
-
-	// Creates an Info Window and set content for it
-	var info_window = new google.maps.InfoWindow();
-	info_window.setContent('<b>Hi Bro!</b>');
-
-	//map.data.loadGeoJson('js/markers.json');
-	$.getJSON("js/markers.json", function(json_data) {
-		var icon_path, latlng;
-   	icon_path = json_data.icon;
-   	latlng = new google.maps.LatLng(json_data.geometry.lat, json_data.geometry.lng);
-
-   	var new_marker = new google.maps.Marker({
-   		icon: icon_path,
-   		position: latlng,
-   		map: map
-   	});
-	});
-
-	/* ++++++++++++++ LISTENERS ++++++++++++++ */
-
-	// Adds "click" event to the marker and shows Info Window
-	marker.addListener('click', function() {
-		info_window.open(map,this);
-	});
-
-	// keeps map centered on resize (responsive)
-	google.maps.event.addDomListener(window,'resize', function(){
-		var center = map.getCenter();
-		google.maps.event.trigger(map,'resize');
-		map.setCenter(center);
-	});
-
 }
 
+
+/* |||||||||||||| FUNCTION DECLARATIONS |||||||||||||| */
+
+// TOGGLE MENU ON CLICK
 function menuSlide(button, navigation, slide_duration) {
 	$(button).click(function(){
 		$(navigation).toggle(slide_duration);
 	});
 }
 
-/* |||||||||||||| FUNCTION DECLARATIONS |||||||||||||| */
+//SET UP SLIDE MENUS
+function setUpSlideMenus() {
+	$(menuSlide('.days-btn', '.days-menu-items',300));
+	$(menuSlide('.options-btn', '.options-menu-items',300));
+}
 
 // LOAD MAP
 function loadMap() {
@@ -73,16 +36,35 @@ function loadMap() {
 		scrollwheel:false
 	};
 
-	// Adds the Map with the options
+	// Add the Map with the options
 	map = new google.maps.Map(document.getElementById('map'), map_options);
 }
 
 // LOAD MARKERS
 function loadMarkers() {
+	map.data.loadGeoJson('js/markers.json');
+	map.data.setStyle(function(feature) {
+		return {icon:feature.getProperty('icon')};
+	});
+}
 
+// CREATE MODALS
+function createModals() {
+	map.data.addListener('click',function(event) {
+		var window_content = event.feature.getProperty('description');
+		var info_window = new google.maps.InfoWindow();
+		info_window.setContent(window_content);
+		info_window.setPosition(event.latLng);
+		info_window.setOptions({pixelOffset: new google.maps.Size(-1,-90)});
+		info_window.open(map);
+	});
 }
 
 // MAKE MAP RESPONSIVE
 function makeMapResponsive() {
-
+	google.maps.event.addDomListener(window,'resize', function(){
+		var center = map.getCenter();
+		google.maps.event.trigger(map,'resize');
+		map.setCenter(center);
+	});
 }

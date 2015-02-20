@@ -12,7 +12,6 @@ function init() {
 	
 }
 
-
 /* |||||||||||||| FUNCTION DECLARATIONS |||||||||||||| */
 
 // TOGGLE MENU ON CLICK
@@ -34,7 +33,8 @@ function loadMap() {
 	var map_options = {
 		center: {lat:-36.8495452,lng:174.7669572},
 		zoom: 15,
-		scrollwheel:false
+		scrollwheel:false,
+		disableDefaultUI: true
 	};
 
 	// Add the Map with the options

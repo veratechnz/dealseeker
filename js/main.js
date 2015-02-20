@@ -33,8 +33,22 @@ function loadMap() {
 	var map_options = {
 		center: {lat:-36.8495452,lng:174.7669572},
 		zoom: 15,
-		scrollwheel:false,
-		disableDefaultUI: true
+		scrollwheel:true,
+		disableDefaultUI: true,
+		styles: [
+			{
+				featureType:'poi',
+				stylers: [
+					{ visibility:'off' }
+				]
+			},
+			{	
+				featureType:'poi.park',
+				stylers: [
+					{ visibility:'on' }
+				]
+			}
+		]
 	};
 
 	// Add the Map with the options

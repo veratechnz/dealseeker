@@ -13,8 +13,8 @@ html, body, .container, main {
 	max-width:960px;
 }
 
-.header, .footer {
-	background: #353535;
+header, footer {
+	background: #2d2d2d;
 	padding:0.5em 0;
 }
 
@@ -149,7 +149,7 @@ img {
 	font-weight: bold;
 	}
 
-	.header, .footer {
+	header, footer {
 	padding: 4% 4% 1% 1%;
 	height: 52px;
 	}

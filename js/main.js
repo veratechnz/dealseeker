@@ -1,12 +1,17 @@
+
 var map;
+var menu_slide_duration = 300;
+var logo_container = '.logo img';
+var days_menu_items = '.days-menu-items';
+var options_menu_items = '.options-menu-items';
 
 init();
 
 function init() {
 
-	setUpSlideMenus();
 	loadMap();
-	loadMarkers();
+	loadMenus();
+	logoOnClick();
 	createModals();
 	makeMapResponsive();
 	
@@ -15,7 +20,7 @@ function init() {
 /* |||||||||||||| FUNCTION DECLARATIONS |||||||||||||| */
 
 // TOGGLE MENU ON CLICK
-function menuSlide(button, navigation, slide_duration) {
+function menuSlideOnClick(button, navigation, slide_duration) {
 	$(button).click(function(){
 		$(navigation).toggle(slide_duration);
 	});
@@ -23,8 +28,17 @@ function menuSlide(button, navigation, slide_duration) {
 
 //SET UP SLIDE MENUS
 function setUpSlideMenus() {
-	$(menuSlide('.days-btn', '.days-menu-items',300));
-	$(menuSlide('.options-btn', '.options-menu-items',300));
+	$(menuSlideOnClick('.days-btn', days_menu_items, menu_slide_duration));
+	$(menuSlideOnClick('.options-btn', options_menu_items, menu_slide_duration));
+}
+
+// OPEN MENUS
+function loadMenus() {
+	setUpSlideMenus();
+	setTimeout(function() {
+		$('.days-btn').click();
+		$('.options-btn').click();
+	},2500);
 }
 
 // LOAD MAP
@@ -60,6 +74,50 @@ function loadMarkers() {
 	map.data.loadGeoJson('js/markers.json');
 	map.data.setStyle(function(feature) {
 		return {icon:feature.getProperty('icon')};
+	});
+}
+
+//SHOW MARKERS
+function showMarkers() {
+	map.data.setStyle({ visible:true });
+}
+
+// HIDE MARKERS
+function hideMarkers() {
+	map.data.setStyle({ visible:false });
+}
+
+// MAP HAS MARKERS
+function mapHasMarkers() {
+	return true;
+}
+
+//SHOW MENUS
+function showMenus() {
+	if ( $(days_menu_items).css(display) == 'none' ) {
+		$(days_menu_items).toggle(menu_slide_duration)
+	}
+	if ( $(options_menu_items).css(display) == 'none' ) {
+		$(options_menu_items).toggle(menu_slide_duration)
+	}
+}
+
+//HIDE MENUS
+function hideMenus() {
+	$(days_menu_items).slideUp(menu_slide_duration);
+	$(options_menu_items).slideUp(menu_slide_duration);
+}
+
+// SHOW ALL MARKERS AND HIDE MENUS
+function logoOnClick() {
+	$(logo_container).click(function() {
+		if ( mapHasMarkers() ) {
+			hideMarkers();
+			showMenus();		
+		} else {
+			showMarkers();
+			hideMenus();
+		}
 	});
 }
 

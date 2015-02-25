@@ -89,7 +89,7 @@ function hideMarkers() {
 
 // MAP HAS MARKERS
 function mapHasMarkers() {
-	return true;
+	return false;
 }
 
 //SHOW MENUS

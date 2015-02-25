@@ -2,6 +2,7 @@ var map;
 
 init();
 
+// Initialize All Functions
 function init() {
 
 	setUpSlideMenus();
@@ -9,6 +10,7 @@ function init() {
 	loadMarkers();
 	createModals();
 	makeMapResponsive();
+	changeOpacity();
 	
 }
 
@@ -83,3 +85,16 @@ function makeMapResponsive() {
 		map.setCenter(center);
 	});
 }
+
+// MAIN MENU OPACITY FIX
+function changeOpacity(){
+	$('.inner-menu li').hover(function(){
+		$(this).removeClass( 'opaque' );
+		console.log('on');
+	}, function(){
+		$(this).addClass( 'opaque' );
+		console.log('off');
+	});
+}
+
+

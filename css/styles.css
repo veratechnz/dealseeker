@@ -24,41 +24,49 @@ header, footer {
 	position: absolute;
 	max-width: 65px;
 	z-index: 10;
+	left: 22%;
 }
 
 .days-btn, .options-btn {
 	color:#F4F0E9;
 }
 
-
-
 /* ++++++++++++++ MENU ++++++++++++++ */
+/* Used with js for menu hover opacity removal. */
 
-.days-menu-items li:hover {
-	background: #5484F8;
-	border-top: none;
-	opacity: 1;
-	color: #fff;
+.inner-menu li {
+	background-color: #5c9eff;
 }
 
-.options-menu-items li:hover {
-	background: #5484F8;
-	border-top: none;
-	opacity: 1;
-	color: #fff;
+.opaque {
+	opacity: 0.8;
 }
 
-.days-menu-items, .options-menu-items {
+.days-menu-items {	
 	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 18px;
-	background: #5c9eff;
 	display: none;
 	position: absolute;
 	z-index: 2;
-	opacity: 0.8;
-	width: 45%;
+	width: 48%;
 	font-weight: 300;
 }
+
+.options-menu-items {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 18px;
+	display: none;
+	position: absolute;
+	z-index: 2;
+	width: 48%;
+	font-weight: 300;
+	text-align: right;
+}
+
+.inner-menu li.opaque a {
+	padding-right: 3%;
+}
+
 
 .days-menu-items {
 	left: 0;

@@ -7,6 +7,7 @@ var options_menu_items = '.options-menu-items';
 
 init();
 
+// Initialize All Functions
 function init() {
 
 	loadMap();
@@ -14,6 +15,7 @@ function init() {
 	logoOnClick();
 	createModals();
 	makeMapResponsive();
+	changeOpacity();
 	
 }
 
@@ -89,7 +91,7 @@ function hideMarkers() {
 
 // MAP HAS MARKERS
 function mapHasMarkers() {
-	return true;
+	return false;
 }
 
 //SHOW MENUS
@@ -141,3 +143,16 @@ function makeMapResponsive() {
 		map.setCenter(center);
 	});
 }
+
+// MAIN MENU OPACITY FIX
+function changeOpacity(){
+	$('.inner-menu li').hover(function(){
+		$(this).removeClass( 'opaque' );
+		console.log('on');
+	}, function(){
+		$(this).addClass( 'opaque' );
+		console.log('off');
+	});
+}
+
+
